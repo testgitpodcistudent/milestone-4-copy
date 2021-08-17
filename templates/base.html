@@ -57,6 +57,74 @@
         </div>
     </header>
 
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+        
+        <!-- Site Logo -->
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img class="nav-logo" src="../static/images/nav-logo.png" alt="TechZone logo">
+        </a>
+
+        <!-- Search Form -->
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ml-5">
+            <form method="GET" action="">
+                <div class="input-group w-100">
+                    <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search products">
+                    <div class="input-group-append">
+                        <button class="form-control btn btn-success rounded-0" type="submit">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Nav Toggler on mobile devices -->
+        <button class="navbar-toggler" id="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars" id="navbar-open-icon"></i>
+            <i class="fas fa-times hidden" id="navbar-close-icon"></i>
+        </button>
+
+        <!-- Mobile Nav, collapsible using Toggler -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <a href=""  class="btn btn-secondary rounded-0 mr-2">Product Admin</a>
+                    {% endif %}
+
+                <a href="{% url 'account_logout' %}" class="btn btn-dark rounded-0 mr-5"> Logout <i class="far fa-user"></i></a>
+
+                {% else %}
+
+                <a href="{% url 'account_signup' %}" class="btn btn-dark rounded-0 mr-2">Register <i class="far fa-user"></i></a>
+                <a href="{% url 'account_login' %}" class="btn btn-dark rounded-0 mr-5">Login <i class="fas fa-sign-in-alt"></i></a>
+
+                {% endif %}
+
+                
+                    <a href="">
+                        <i class="fas fa-shopping-cart mr-5"></i>
+                    </a>
+                <a id="cart-total">
+                    {% if grand_total %}
+                        € {{ grand_total|floatformat:2 }}
+                    {% else %}
+                        € 0.00
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
     {% block page_header %}
     {% endblock %}
 
