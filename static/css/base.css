@@ -30,10 +30,29 @@ body {
     outline: none !important;
 }
 
+.bg-black {
+    background: black;
+    color: white;
+}
+
+.bg-black a {
+    color: white;
+    margin-left:8%;
+    margin-right:8%;
+}
 
 .hidden {
     display:none !important;
 }
+
+.box-element {
+    margin-top: 16px;
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+    background-color: #fff;
+    border-radius: 0px !important;
+    padding: 10px;
+}
+
 
 /* animations */
 /* Sink - from https://github.com/IanLunn/Hover/blob/master/css/hover.css */
