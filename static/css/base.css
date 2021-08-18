@@ -53,6 +53,34 @@ body {
     padding: 10px;
 }
 
+.thumbnail {
+    height: 250px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.product-price {
+    display: inline-block;
+    float: left;
+}
+
+.add-to-cart {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.product-detail-image {
+    float:left;
+    height: 350px;
+    border-radius: 5px;
+}
 
 /* animations */
 /* Sink - from https://github.com/IanLunn/Hover/blob/master/css/hover.css */

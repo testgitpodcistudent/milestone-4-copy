@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for product in products %}
+        <a href="{% url 'product_page' product.id %}" class="col-lg-4">
+            <div class="box-element">
+                <div class="text-center">
+                    {{ product.name }}
+                    <img class="thumbnail" src="{{ product.image }}" alt="{{ product.name }}"
+                        onerror="this.onerror=null; this.src='{% static 'images/noimage.png' %}'">
+                    <hr class="w-75">
+                    <div class="clearfix">
+                        <h5 class="product-price ml-5"><strong>
+                                € {{product.price|floatformat:2}}
+                            </strong></h4>
+                            <button data-product="{{product.id}}" data-action="add"
+                                class="btn btn-sm btn-outline-success add-to-cart mr-2 rounded-0">Add to
+                                Cart <i class="fas fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
