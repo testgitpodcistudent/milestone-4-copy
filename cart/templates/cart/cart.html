@@ -15,17 +15,24 @@
         </div>
     </div>
 
-    <div class="box-element pl-4 pr-4">
-        {% if cart_items %}
-
-        {% else %}
-        <div class="row">
-            <div class="col text-center text-muted mt-5 mb-5">
-                Your shopping cart is empty.
-            </div>
+    {% if cart_items %}
+    {% for item in cart_items %}
+    <div class="card white col-10 ml-auto mr-auto mt-2">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ item.product.name }}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
         </div>
-        {% endif %}
     </div>
+    {% endfor %}
+    {% else %}
+    <div class="row">
+        <div class="col text-center text-muted mt-5 mb-5">
+            Your shopping cart is empty.
+        </div>
+    </div>
+    {% endif %}
 </div>
 
 {% endblock %}
