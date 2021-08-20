@@ -19,6 +19,7 @@
         {% if cart_items %}
         <div class="table-responsive rounded">
             <table class="table table-sm table-borderless table-striped">
+
                 <!-- Table header -->
                 <thead>
                     <tr>
@@ -26,33 +27,47 @@
                         <th scope="col"></th>
                         <th scope="col">Price</th>
                         <th scope="col">Qty</th>
-                        <th scope="col mr-2">Subtotal</th>
+                        <th scope="col">Subtotal</th>
                     </tr>
                 </thead>
 
-                <!-- render a table row for each cart item -->
+                <!-- Render a table row for each cart item, with a TD cell for cart itme product's image, name+SKU, quantity in bag & subtotal. -->
                 {% for item in cart_items %}
                 <tr>
+                    <!-- Product image -->
                     <td class="p-3 w-25 mr-0 ml-0">
-                        <img class="img-fluid rounded cart-item-image .d-none .d-sm-block" src="{{ item.product.image.url }}">
+                        <img class="img-fluid rounded cart-item-image .d-none .d-sm-block"
+                            src="{{ item.product.image.url }}">
                     </td>
+
+                    <!-- Product name-->
                     <td class="py-3">
                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                        <!-- SKU -->
                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                     </td>
+
+                    <!-- Product price -->
                     <td class="py-3">
                         <p class="my-0">
                             €{{ item.product.price }}
                         </p>
                     </td>
+
+                    <!-- Product quantity -->
                     <td class="py-3 w-25">
-                        <p class="my-0 ml-3">{{ item.quantity }}</p>
+                        <p class="my-0 ml-3">{{ item.quantity }}
+                            {% include "cart/quantity-form.html" %}
                     </td>
+
+                    <!-- Product subtotal -->
                     <td class="py-3">
-                        <p class="my-0">€ {{ item.product.price }}</p>
+                        <p class="my-0">€ subtotal</p>
                     </td>
                 </tr>
                 {% endfor %}
+
+                <!-- Cart total -->
                 <tr>
                     <td colspan="5" class="pt-5 text-right">
                         <h6><strong>cart Total: € {{ total|floatformat:2 }}</strong></h6>
@@ -68,19 +83,24 @@
                         {% endif %}
                     </td>
                 </tr>
+
                 <tr>
-                    <td colspan="5" class="text-right">
+                    <td colspan="5" class="text-right my-1 py-3">
+                        <!-- "Keep Shopping" button (browser back) -->
                         <button class="btn btn-light rounded-0 text-uppercase" onclick="goBack()"><i
                                 class="fas fa-chevron-left mr-2"></i>
                             Keep Shopping</button>
+
+                        <!-- "Check Out" button -->
                         <button class="btn btn-success rounded-0 text-uppercase px-5">
                             Check Out <i class="ml-2 fas fa-chevron-circle-right"></i></button>
                     </td>
                 </tr>
             </table>
         </div>
-        </table>
     </div>
+
+    <!-- If cart empty, display message explaining so. -->
     {% else %}
     <div class="row">
         <div class="col text-center text-muted mt-5 mb-5">
@@ -91,4 +111,36 @@
 </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function(e) {
+        window.scrollTo(0,0)
+    })
+</script>
+{% include 'products/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}
