@@ -124,6 +124,21 @@ a:hover {
     border-radius: 5px;
 }
 
+.cart-row {
+    display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+}
+
+.cart-item-image {
+    padding:5px;
+    background-color: white;
+    max-height:100px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
 /* animations */
 /* Sink - from https://github.com/IanLunn/Hover/blob/master/css/hover.css */
 .hvr-sink {
