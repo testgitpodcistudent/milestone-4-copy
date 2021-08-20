@@ -144,12 +144,16 @@ a:hover {
 }
 
 .qty_input {
-    max-width:65px;
     text-align: center;
 }
 
 .decrement-qty, .increment-qty {
     font-size: 1rem !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 /* animations */
