@@ -34,9 +34,8 @@
 
     {% block corejs %}
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
@@ -72,6 +71,19 @@
             <img src="{% static 'images/nav-logo.png' %}" class="nav-logo" alt="TechZone Logo">
         </a>
 
+
+        <!-- cart total (mobile view version. Hides on 'm' and above screen sizes.)-->
+        <a href="{% url 'view_cart' %}" id=" cart-total" class="btn btn-sm btn-secondary d-lg-none d-xl-none">
+            <i class="fas fa-shopping-cart"></i>
+            <span>
+                {% if grand_total %}
+                € {{ grand_total|floatformat:2 }}
+                {% else %}
+                € 0.00
+                {% endif %}
+            </span>
+        </a>
+
         <!-- Nav Toggler on mobile devices -->
         <button class="navbar-toggler" id="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -84,22 +96,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
 
-                                <!-- cart total -->
-                                <li>
-                                    <a href="{% url 'view_cart' %}" id=" cart-total" class="btn btn-secondary mr-5">
-                                        <i class="fas fa-shopping-cart"></i>
-                                        <span>
-                                            {% if grand_total %}
-                                            € {{ grand_total|floatformat:2 }}
-                                            {% else %}
-                                            € 0.00
-                                            {% endif %}
-                                        </span>
-                                    </a>
-                                </li>
-                
-                <!-- Login dropdown -->
+                <!-- cart total | deskop version (does not display on 'xs' , 's' or 'md' screen sizes )-->
+                <li>
+                    <a href="{% url 'view_cart' %}" id=" cart-total" class="btn btn-secondary mr-5">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>
+                            {% if grand_total %}
+                            € {{ grand_total|floatformat:2 }}
+                            {% else %}
+                            € 0.00
+                            {% endif %}
+                        </span>
+                    </a>
+                </li>
 
+                <!-- Login dropdown -->
                 <!-- If user is logged in, show username as dropdown button text-->
                 {% if user.is_authenticated %}
                 <div class="dropdown">
@@ -112,7 +123,8 @@
                     <div class="dropdown-menu dropdown-menu-right rounded-0" aria-labelledby="dropdownMenuButton">
                         {% if user.is_superuser %}
                         <a class="dropdown-item" href="#"><i class="fas fa-list-alt mr-1"></i> Manage Products</a>
-                        <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-tools mr-1"></i> Django Admin</a>
+                        <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-tools mr-1"></i> Django
+                            Admin</a>
                         <hr class="w-75">
 
                         <!-- Else, user is customer; show link to My Account page -->
@@ -142,18 +154,18 @@
     <div class="row bg-black justify-content-center">
         <ul class="nav justify-content-center">
             <li class="nav-item">
-              <a class="nav-link hvr-underline-from-center" href="{% url 'products' %}">All Products </a>
+                <a class="nav-link hvr-underline-from-center" href="{% url 'products' %}">All Products </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link hvr-underline-from-center" href="{% url 'products' %}?category=Laptops">Laptops</a>
+                <a class="nav-link hvr-underline-from-center" href="{% url 'products' %}?category=Laptops">Laptops</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link hvr-underline-from-center" href="{% url 'products' %}?category=Phones">Phones</a>
+                <a class="nav-link hvr-underline-from-center" href="{% url 'products' %}?category=Phones">Phones</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link hvr-underline-from-center" href="{% url 'products' %}?category=Tablets">Tablets</a>
+                <a class="nav-link hvr-underline-from-center" href="{% url 'products' %}?category=Tablets">Tablets</a>
             </li>
-          </ul>
+        </ul>
     </div>
 
 
