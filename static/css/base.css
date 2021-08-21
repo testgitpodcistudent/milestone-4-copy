@@ -179,6 +179,12 @@ input::-webkit-inner-spin-button {
     overflow-y: auto;
 }
 
+/* Form Styling */
+form input {
+    color:black !important;
+    border-radius: 0px !important;
+}
+
 /* animations */
 /* Sink - from https://github.com/IanLunn/Hover/blob/master/css/hover.css */
 .hvr-sink {

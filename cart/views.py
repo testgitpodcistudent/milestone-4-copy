@@ -41,10 +41,10 @@ def adjust_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] = quantity
-        messages.success(request, f'Updated "{product.name}" quantity to [{item_id}]')
+        messages.success(request, f'Updated "{product.name}" quantity')
     else:
         cart[item_id] = quantity
-        messages.success(request, f'Updated "{product.name}" quantity to [{item_id}]')
+        messages.success(request, f'Updated "{product.name}" quantity')
 
 
     request.session['cart'] = cart
