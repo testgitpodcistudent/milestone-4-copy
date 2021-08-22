@@ -185,6 +185,11 @@ form input {
     border-radius: 0px !important;
 }
 
+#payment-form .form-control, #card-element {
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
 /* animations */
 /* Sink - from https://github.com/IanLunn/Hover/blob/master/css/hover.css */
 .hvr-sink {
