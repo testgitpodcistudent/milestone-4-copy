@@ -80,19 +80,6 @@
             <img src="{% static 'images/nav-logo.png' %}" class="nav-logo" alt="TechZone Logo">
         </a>
 
-
-        <!-- cart total (mobile view version. Hides on 'm' and above screen sizes.)-->
-        <a href="{% url 'view_cart' %}" id=" cart-total" class="btn btn-sm btn-secondary d-lg-none d-xl-none">
-            <i class="fas fa-shopping-cart"></i>
-            <span>
-                {% if grand_total %}
-                € {{ grand_total|floatformat:2 }}
-                {% else %}
-                € 0.00
-                {% endif %}
-            </span>
-        </a>
-
         <!-- Nav Toggler on mobile devices -->
         <button class="navbar-toggler" id="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
