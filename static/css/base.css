@@ -33,6 +33,10 @@ body {
     outline: none !important;
 }
 
+.navbar-nav i {
+    text-align:right !important;
+}
+
 .bg-black {
     background: black;
     color: white;

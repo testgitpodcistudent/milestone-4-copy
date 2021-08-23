@@ -125,7 +125,7 @@
 
                         <!-- Else, user is customer; show link to My Account page -->
                         {% else %}
-                        <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt mr-1"></i> My Account</a>
+                        <a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-sign-out-alt mr-1"></i> My Account</a>
                         {% endif %}
 
                         <!-- Finally, show Log Out button to all users -->
