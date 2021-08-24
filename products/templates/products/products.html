@@ -80,7 +80,7 @@
     <!-- Product entries; each links to the relevant individual product_page -->
     <div class="row">
         {% for product in products %}
-        <a href="{% url 'product_page' product.id %}" class="col-lg-4 product-card">
+        <div class="col-lg-4">
             <div class="box-element">
                 <div class="text-center">
 
@@ -100,24 +100,39 @@
                     <div class="clearfix">
 
                         <!-- Product Price and "Add to Cart +" button -->
-                        <!-- "Add to Cart +" Button -->
-                        <div class="col-6">
-                            <button type="submit" form="add-to-cart-form"
-                                class="btn btn-sm btn-secondary rounded-0 w-100">
-                                View <i class="fas fa-chevron-right"></i>
-                            </button>
-
-                            <!-- Product price -->
-                            <div class="col-6">
+                        <!-- Product price -->
+                        <div class="row">
+                            <div class="col-12">
                                 <h5 class="product-price ml-1"><strong>
                                         <span class="small">€</span> {{product.price|floatformat:2}}
                                     </strong></h5>
                             </div>
                         </div>
+
+                        <!-- "View" button -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="a btn btn-light btn-sm w-100">
+                                    View <i class="fas fa-chevron-right"></i>
+                                </div>                                
+                            </div>
+                        </div>
+
+                        <!-- "Edit/Delete" Button -->
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="{% url 'edit_product' product.id %}" class="a btn btn-info btn-sm w-25">
+                                    <i class="far fa-edit"></i> Edit
+                                </a>
+                                <a href="{% url 'delete_product' product.id %}" class="a btn btn-danger btn-sm w-25">
+                                    <i class="far fa-trash-alt"></i> Delete
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
         {% endfor %}
     </div>
 </div>
