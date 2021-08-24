@@ -13,7 +13,11 @@
     <div class="row box-element ml-1 mr-1">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
-                <img class="card-img-top img-fluid rounded" src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% if item.product.image %}
+                <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                {% else %}
+                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                {% endif %}
             </div>
         </div>
 
