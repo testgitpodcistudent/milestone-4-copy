@@ -53,8 +53,8 @@
     <!-- Stripe -->
     <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
     <script src="https://js.stripe.com/v3/"></script>
-    {% endblock %}
 
+    {% endblock %}
 
     {% block extra_js %}
     {% endblock %}
@@ -118,7 +118,7 @@
                     <!-- If user is superuser (admin), show links to Manage Products page and Django Admin panel -->
                     <div class="dropdown-menu dropdown-menu-right rounded-0" aria-labelledby="dropdownMenuButton">
                         {% if user.is_superuser %}
-                        <a class="dropdown-item" href="#"><i class="fas fa-list-alt mr-1"></i> Manage Products</a>
+                        <a class="dropdown-item" href="{% url 'add_product' %}"><i class="fas fa-list-alt mr-1"></i> Manage Products</a>
                         <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-tools mr-1"></i> Django
                             Admin</a>
                         <hr class="w-75">

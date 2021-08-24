@@ -40,8 +40,11 @@
                 <tr>
                     <!-- Product image -->
                     <td class="p-3 w-25 mr-0 ml-0">
-                        <img class="img-fluid rounded cart-item-image .d-none .d-sm-block"
-                            src="{{ item.product.image.url }}">
+                        {% if item.product.image %}
+                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        {% else %}
+                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                        {% endif %}
                     </td>
 
                     <!-- Product name-->
