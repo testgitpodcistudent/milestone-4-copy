@@ -4,7 +4,6 @@
 <html lang="en">
 
 <head>
-
     {% block meta %}
     <!-- Required meta tags -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -119,14 +118,16 @@
                     <!-- If user is superuser (admin), show links to Manage Products page and Django Admin panel -->
                     <div class="dropdown-menu dropdown-menu-right rounded-0" aria-labelledby="dropdownMenuButton">
                         {% if user.is_superuser %}
-                        <a class="dropdown-item" href="{% url 'add_product' %}"><i class="fas fa-list-alt mr-1"></i> Manage Products</a>
+                        <a class="dropdown-item" href="{% url 'add_product' %}"><i class="fas fa-list-alt mr-1"></i>
+                            Manage Products</a>
                         <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fas fa-tools mr-1"></i> Django
                             Admin</a>
                         <hr class="w-75">
 
                         <!-- Else, user is customer; show link to My Account page -->
                         {% else %}
-                        <a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-sign-out-alt mr-1"></i> My Account</a>
+                        <a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-sign-out-alt mr-1"></i> My
+                            Account</a>
                         {% endif %}
 
                         <!-- Finally, show Log Out button to all users -->
