@@ -1,6 +1,9 @@
 from pathlib import Path
 import os
 
+import dj_database_url
+
+
 if os.path.exists("env.py"):
     import env
 
@@ -17,7 +20,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['techzone-ms4.herokuapp.com', 'localhost']
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
@@ -122,13 +125,16 @@ WSGI_APPLICATION = 'techzone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
+DATABASES = {
+    'default': dj_database_url.parse('postgres://qwmrksyzdlafcq:ada670ddcadf8195faa35f5c9aedd63670367ef00a21f9922323737a87a7ad7f@ec2-54-154-101-45.eu-west-1.compute.amazonaws.com:5432/ddmdbob5jch9qd')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

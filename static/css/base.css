@@ -14,6 +14,7 @@ body {
     font-family: 'Poppins', sans-serif !important;
 }
 
+/* Navbar styling */
 .nav-logo {
     height: 60px;
 }
@@ -55,6 +56,8 @@ a:hover {
     display: none !important;
 }
 
+
+/* General elements styling */
 .box-element {
     margin-top: 16px;
     box-shadow: hsl(0, 0%, 80%) 0 0 16px;
@@ -128,6 +131,8 @@ a:hover {
     border-radius: 5px;
 }
 
+
+/* Cart styling */
 .cart-row {
     display: flex;
     align-items: flex-stretch;
@@ -160,8 +165,8 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-/* Toast Styling */
 
+/* Toast Styling */
 .message-container {
     position: fixed;
     top: 72px;
@@ -183,6 +188,7 @@ input::-webkit-inner-spin-button {
     overflow-y: auto;
 }
 
+
 /* Form Styling */
 form input {
     color:black !important;
@@ -193,6 +199,7 @@ form input {
     color: black;
     border: 1px solid rgba(0, 0, 0, 0.6);
 }
+
 
 /* animations */
 /* Sink - from https://github.com/IanLunn/Hover/blob/master/css/hover.css */
