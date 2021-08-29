@@ -85,7 +85,7 @@
                 <div class="text-center">
 
                     <!-- Product name -->
-                    {{ product.name }}
+                    <a href="{% url 'product_page' product.id %}">{{ product.name }}</a>
 
                     <!-- Product image -->
                     <img class="thumbnail mt-1 mb-1" src="{{ product.imageURL }}" alt="{{ product.name }}" onerror="this.onerror=null; 
@@ -112,9 +112,9 @@
                         <!-- "View" button -->
                         <div class="row">
                             <div class="col-12">
-                                <div class="a btn btn-light btn-sm w-100">
+                                <a href="{% url 'product_page' product.id %}" class="a btn btn-light btn-sm w-100">
                                     View <i class="fas fa-chevron-right"></i>
-                                </div>                                
+                                </a>
                             </div>
                         </div>
 

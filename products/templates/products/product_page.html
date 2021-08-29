@@ -13,11 +13,8 @@
     <div class="row box-element ml-1 mr-1">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
-                {% if item.product.image %}
-                <img class="w-100" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                {% else %}
-                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                {% endif %}
+                <img class="thumbnail mt-1 mb-1" src="{{ product.imageURL }}" alt="{{ product.name }}" onerror="this.onerror=null; 
+                this.src='{% static 'images/noimage.png' %}'">
             </div>
         </div>
 

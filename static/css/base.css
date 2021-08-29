@@ -56,8 +56,27 @@ a:hover {
     display: none !important;
 }
 
+/* Homepage styling */
+.homepage-splash {
+    height:100vh;
+    background-image: url(../images/homepage-background.jpg);
+    background-size:cover;
+}
+
+.call-to-action {
+    border-radius:35px;
+    color: white;
+    font-size: 2.8rem;
+    padding:20px;
+    background: rgb(175,175,175,0.5);
+    background: linear-gradient(180deg, rgba(175,175,175,0.7) 0%, rgba(255,255,255,0.7) 100%);
+}
 
 /* General elements styling */
+.text-shadow {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
 .box-element {
     margin-top: 16px;
     box-shadow: hsl(0, 0%, 80%) 0 0 16px;

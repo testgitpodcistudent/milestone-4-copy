@@ -2,9 +2,18 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    <div class="box-element">
-        e
+<div class="homepage-splash">
+    <div class="row">
+        <div class="col-6 pl-5 pt-5 text-white text-shadow d-flex">
+            <p class="h2">Your one-stop shop for tablets, laptops and mobile devices.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-s-12"></div>
+        <div class="col-md-6 sol-s-12 d-flex pt-5 text-shadow">
+            <a href="{% url 'products' %}" class="shadow btn call-to-action btn-light text-uppercase ml-auto mr-auto">Shop Now 
+                <i class="fas fa-chevron-right mr-2"></i></a>
+        </div>
     </div>
 </div>
 {% endblock %}
