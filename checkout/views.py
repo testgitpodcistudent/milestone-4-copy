@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 from django.conf import settings
 
 from .forms import OrderForm
@@ -175,13 +177,26 @@ def checkout_success(request, order_number):
         user_profile_form = UserProfileForm(profile_data, instance=profile)
         if user_profile_form.is_valid():
             user_profile_form.save()
-
+    
     messages.success(
         request,
         f"Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.",
     )
+
+    """Send the user a confirmation email"""
+    cust_email = order.email
+    subject = render_to_string(
+        "checkout/confirmation_emails/confirmation_email_subject.txt",
+        {"order": order},
+    )
+    body = render_to_string(
+        "checkout/confirmation_emails/confirmation_email_body.txt",
+        {"order": order, "contact_email": settings.DEFAULT_FROM_EMAIL},
+    )
+
+    send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [cust_email])
 
     if "cart" in request.session:
         del request.session["cart"]
