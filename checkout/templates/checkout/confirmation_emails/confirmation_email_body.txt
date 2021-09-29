@@ -1,21 +1,16 @@
-<img src="https://techzone-ms4.s3.amazonaws.com/static/images/nav-logo.png">
+This is a confirmation of your order at TechZone. Your order was received on {{ order.date }}.
 
-This is a confirmation of your order at TechZone. Your order information is below:
-
-Order # <b>{{ order.order_number }}</b>
-Order received on <i>{{ order.date }}</i>
+Order #{{ order.order_number }}
 
 Order Total: €{{ order.order_total }}
 Delivery: €{{ order.delivery_cost }}
-Grand Total: <b>€{{ order.grand_total }}</b>
+Grand Total: €{{ order.grand_total }}
 
 Your order will be shipped to 
 
-<i>
 {{ order.street_address1 }}
 {{ order.street_address2 }},
 {{ order.country }}.
-</i>
 
 Thank you for your order!
 
