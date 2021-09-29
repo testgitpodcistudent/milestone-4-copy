@@ -1,1 +1,1 @@
-TechZone Confirmation for Order Number {{ order.order_number }}
+TechZone Order Confirmation | # {{ order.order_number }}
