@@ -13,8 +13,7 @@ Your order will be shipped to
 
 <i>
 {{ order.street_address1 }}
-{{ order.street_address2 }}, 
-{{ order.county }},
+{{ order.street_address2 }},
 {{ order.country }}.
 </i>
 
