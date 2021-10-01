@@ -1,23 +1,40 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
-{% endblock %}
-
 {% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
     </div>
-</div>
 {% endblock %}
 
 {% block content %}
+    <div class="overlay"></div>
+    <div class="container box-element">
+        <div class="row ml-1 mr-1">
+            <div class="col-12 text-center mt-4 mb-1">
+                <!-- "Back" button (calls browser back function) -->
+                <button class="btn btn-light rounded-0 float-left" onclick="goBack()"><i
+                        class="fas fa-chevron-left mr-2"></i>
+                    Back</button>
+                    <h4>Product Management</h4>
+                    <h5><i class="far fa-plus-square"></i> Add Products</h5>
+            </div>
+        </div>
+        <hr class="w-75">
 
-{% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-
+        <div class="row">
+            <div class="col-12 col-lg-6 ml-auto mr-auto">
+                <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right text-center">
+                        <a class="btn btn-danger rounded-0 w-25" href="{% url 'products' %}"><i class="far fa-window-close"></i> Cancel</a>
+                        <button class="btn btn-info rounded-0 w-25" type="submit">Add <i class="far fa-plus-square"></i></button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
 {% endblock %}
