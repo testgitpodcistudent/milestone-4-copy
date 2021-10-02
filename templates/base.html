@@ -189,10 +189,23 @@
     {% block page_header %}
     {% endblock %}
 
-
+    <div class="content">
     {% block content %}
     {% endblock %}
+    </div>
 
+    <footer class="footer bg-dark text-center">
+        <a href="http://www.facebook.com/" target="_blank" class="social-link hvr-underline-from-center">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="http://www.twitter.com/" target="_blank" class="social-link hvr-underline-from-center">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="http://www.instagram.com/" target="_blank" class="social-link hvr-underline-from-center">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="{% url 'contact' %}" class="contact-link hvr-underline-from-center">Contact Us</a>
+    </footer>
 
     {% block postloadjs %}
     <!-- Display toasts -->
