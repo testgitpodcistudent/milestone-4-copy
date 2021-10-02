@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container box-element">
+        <div class="row ml-1 mr-1">
+            <div class="col-12 text-center mt-4 mb-1">
+                <!-- "Back" button (calls browser back function) -->
+
+                    <h4><i class="fas fa-paper-plane"></i> Your message has been sent.</h4>
+            </div>
+        </div>
+        <hr class="w-75">
+
+        <div class="row">
+            <div class="col-12 col-lg-6 ml-auto mr-auto">
+            <p class="w-75 ml-auto mr-auto justify-center mt-5 mb-5">A member of our customer support team will respond to you shortly.</p>
+            <a class="btn btn-light w-100 ml-auto mr-auto mb-5" href="{% url 'products' %}"><i class="fas fa-chevron-left"></i> Continue browsing</a>
+            </div>            
+        </div>
+    </div>
+{% endblock %}
