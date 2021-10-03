@@ -98,20 +98,19 @@ The site's structure consists of
 - **Admin authentication** which allows the admin user to access product management and a shortcut to the Django Admin Panel.
     These utilize the *admin_login* and *logout* python functions.
 
-    ![Admin Login](/static/readme-assets/admin-login.png)
+    ![Admin menu](/static/readme-assets/admin-login.png)
 
     - _The admin-login page can be accessed by clicking the link at the top right of the navbar when logged in as admin._
 
-    ![Admin features](/static/readme-assets/admin-features.png)
-    - _Once logged in as an admin, links to the content-management features are displayed at the top of the product list._
-- **product Page** for each product which is loaded when a product is clicked on the homepage..
-- **Add New product** - used to add a new product to the database.
-- **Delete product** allows the admin to delete the given product.
-- **Edit product** allows the admin to edit the selected product.
+    ![Admin add product page](/static/readme-assets/add-product-screenshot.png)
+    - _Add Product page, accessible via the Admin menu._
+- **Product Page** for each product which is loaded when a product is clicked on the homepage.
+- **Delete Product** allows the admin to delete the given product.
+- **Edit Product** allows the admin to edit the selected product.
     ![Edit and delete buttons](/static/readme-assets/edit-delete.png)
     - _Edit and Delete buttons as displayed when logged in as admin_
-- **Messages** display a simple message to the user confirming actions such as cart updates, product deletions, login actions etc.
-    ![Messages](/static/readme-assets/flash-message.png)
+- **Messages** display a short message to the user confirming actions such as cart updates, product deletions, login actions etc.
+    ![Messages](/static/readme-assets/message.png)
 
 **Developer Notes**
 - If you encounter the following error at any point running terminal commands in local deployment: ``` django.db.utils.OperationalError: FATAL:  role "qwmrksyzdlafcq" does not exist ``` , running ``` unset PGHOSTADDR ``` and re-trying the previous command will allow you to continue.
@@ -124,6 +123,9 @@ The site's structure consists of
 
 ## Future Features
 
+- A live chat which would allow the user to correspond with the site team in real time to solve customer queries.
+
+- Stock-keeping functionality to allow the administrator to keep a track of stock of each item.
 
 [⇧ Back to Top](#table-of-contents)
 
