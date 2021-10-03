@@ -70,7 +70,6 @@ The website is fully responsive, utilizing simple and colourful design language 
 <hr>
 
 ## Design
-![AmIResponsive Screenshot](/static/readme-assets/responsive-screens.png)
 
 * [Click here to view wireframes.](/static/readme-assets/wireframes.md) <br>
 
