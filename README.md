@@ -76,15 +76,14 @@ The website is fully responsive, utilizing simple and colourful design language 
 ### Concept and Font Choice
 The site is designed to appear clean, professional, and uncluttered while also appearing vibrant and welcoming.
 
+The [Poppins](https://fonts.google.com/specimen/Poppins) font is the primary font used throughout all sections of the site.
 
 - [Hover.CSS](https://ianlunn.github.io/Hover/) - CSS library used for hover effects on site buttons.
 - [FontAwesome](https://fontawesome.com/) - Webfont library used for icons throughout the site.
 
 ### Colours
 
-![Image scheme](/static/readme-assets/colours.png)
-
-_Some examples of the colours as used throughout the site_
+The colours used throughout the site are primarily the default BootStrap element colours; largely the _dark, success, danger_ and _info_ colour classes.
 
 [⇧ Back to Top](#table-of-contents)
 
@@ -110,7 +109,9 @@ The site's structure consists of
 - **Product Page** for each product which is loaded when a product is clicked on the homepage.
 - **Delete Product** allows the admin to delete the given product.
 - **Edit Product** allows the admin to edit the selected product.
+
     ![Edit and delete buttons](/static/readme-assets/edit-delete.png)
+
     - _Edit and Delete buttons as displayed when logged in as admin_
 - **Messages** display a short message to the user confirming actions such as cart updates, product deletions, login actions etc.
     ![Messages](/static/readme-assets/message.png)
@@ -217,7 +218,9 @@ Once the app is deployed, click "Open App" in Heroku on the project page. The pr
 
 
 # Credits
+The skills learnt in the [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1/tree/8486523459273dddf96932a4ae19dd9a83af679d) project on the [CodeInstitute](https://codeinstitute.net/) Full-Stack Software Development course are the basis for this project, and significant code and logic from the Boutique Ado source code is present in this project.
 
+All images used are royalty free from [Pexels](https://www.pexels.com/license/) and [Unsplash](https://unsplash.com/license) and used within the confines of their respective licenses. 
 
 [⇧ Back to Top](#table-of-contents)
 
@@ -226,6 +229,6 @@ Once the app is deployed, click "Open App" in Heroku on the project page. The pr
 
 ## Acknowledgements
 
-
+- A big thanks to CodeInstitute Student Support, Tutor Support and my mentor Arnold Kyeza for his support throughout all my projects.
 
 [⇧ Back to Top](#table-of-contents)
