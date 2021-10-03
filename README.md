@@ -15,6 +15,7 @@
     * [Future Features](#future-features)
 4. [Technologies Used](#technologies-used)
     * [Django](#django)
+    * [Stripe](#stripe)
     * [Coding Languages & Libraries](#coding-languages-and-libraries)
     * [Software](#software)
     * [Additional Tools](#additional-tools)
@@ -30,9 +31,10 @@
 
 ## Overview
 
-Placeholder text
+TechZone is an e-commerce website featuring user registration, login, product management, and providing customers with the ability to place online orders and pay for them using the Stripe checkout platform.
 
 The website is fully responsive, utilizing simple and colourful design language and an intuitive information structure.
+This project was built as part of the [CodeInstitute](https://codeinstitute.net/) Full-Stack Software Development course purely for educational purposes.
 
 [⇧ Back to Top](#table-of-contents)
 
@@ -141,6 +143,9 @@ The site's structure consists of
 ## Django
 The website is built using [Django](https://www.djangoproject.com/).
 
+## Stripe
+The website's payment system is built using [Stripe](https://stripe.com/en-ie).
+
 
 ## Coding Languages and Libraries
 
@@ -184,7 +189,7 @@ The website is built using [Django](https://www.djangoproject.com/).
 
 ## GitPod Deployment
 
-1. Login to GitHub, and navigate to the [repository](https://github.com/RoryBr1/Milestone-3)
+1. Login to GitHub, and navigate to the [repository](https://github.com/RoryBr1/Milestone-4)
 2. Click on the GitPod button at the top right.
 3. Install all requirements; in the terminal of your GitPod workspace, type  
    ``` pip3 install -r requirements.txt ```
