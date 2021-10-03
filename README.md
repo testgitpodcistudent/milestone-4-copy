@@ -93,6 +93,9 @@ _Some examples of the colours as used throughout the site_
 
 # Existing Features
 The site's structure consists of
+- **Homepage** Basic landing page with splash image and call-to-action button which leads to the main product page.
+- **User registration**, fully functional and requiring the user to confirm their e-mail address by clicking a link which is emailed to them.
+- **User login** which allows the user to login, with different site accessibilities between regular users (customers) and admins.
 - **Products page** which displays all products, as well as search and sort-by-category functionality. When logged in as admin, relevant control panel links are also displayed.
     This uses the *get_products* python function.
 - **Admin authentication** which allows the admin user to access product management and a shortcut to the Django Admin Panel.
@@ -117,7 +120,7 @@ The site's structure consists of
 
 - Ensure your IDE Python linter is set to _flake8_, or you will encounter false errors related to object models not existing.
 
-- In _techzone/settings.py_ , 4 lines within _AUTH_PASSWORD_VALIDATORS_ are not PEP8 compliant. Fixing these caused errors, and a development decision was made to leave them as they are.
+- Some files have PEP8 compliancy errors, specifically "Line too long" errors. A development decision has been made to ignore these warning as fixing them has caused bugs.
 
 <hr>
 
