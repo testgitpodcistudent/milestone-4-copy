@@ -23,6 +23,7 @@
 <hr>
 
 ## HTML
+[W3C HTML validator](https://validator.w3.org/nu/)
 
 * On deployed site, right-click and select "View Page Source". This is the final, rendered HTML. This HTML for each page was put through the HTML validator. Each page's HTML passed with no errors. Some warnings may be present, and a development decision has been made not to fix these at this time.
 
