@@ -93,8 +93,8 @@
             <ul class="navbar-nav ml-auto">
 
                 <!-- cart total | deskop version (does not display on 'xs' , 's' or 'md' screen sizes )-->
-                <li>
-                    <a href="{% url 'view_cart' %}" id=" cart-total" class="btn btn-secondary mr-5">
+                <div>
+                    <a href="{% url 'view_cart' %}" class="btn btn-secondary mr-5">
                         <i class="fas fa-shopping-cart"></i>
                         <span>
                             {% if grand_total %}
@@ -104,7 +104,7 @@
                             {% endif %}
                         </span>
                     </a>
-                </li>
+                </div>
 
                 <!-- Login dropdown -->
                 <!-- If user is logged in, show username as dropdown button text-->
