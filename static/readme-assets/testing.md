@@ -13,7 +13,6 @@
 
 # Code Validators
 ## Python
-![python validator](python-validator.png)
 * All Python files are PEP8 compliant with a few exceptions. In any case where a PEP8 "Line too long" error is present, this has been left so intentionally as splitting the line causes major development issues.
 
 <hr>
