@@ -1,5 +1,5 @@
 ![Logo](/static/readme-assets/logo-readme.png)
-# Data-Centric Project | product Website
+# Full-Stack Project | e-Commerce Website
 
 # Table of Contents
 
