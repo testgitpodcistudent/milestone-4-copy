@@ -21,6 +21,7 @@ body {
 
 /* Footer */
 .footer {
+    width: 100vw;
     height: 50px;
 }
 
@@ -46,6 +47,10 @@ body {
 /* Navbar styling */
 .nav-logo {
     height: 60px;
+}
+
+nav, .subnav {
+    width: 100vw;
 }
 
 #navbar-open-icon,
