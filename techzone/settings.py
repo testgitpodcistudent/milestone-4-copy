@@ -125,8 +125,7 @@ WSGI_APPLICATION = "techzone.wsgi.application"
 # }
 
 DATABASES = {
-    "default": dj_database_url.parse("postgres://qwmrksyzdlafcq:ada670ddcadf8195faa35f5c9aedd63670367ef00a21f9922323737a87a7ad7f@ec2-54-154-101-45.eu-west-1.compute.amazonaws.com:5432/ddmdbob5jch9qd"
-    )
+    "default": dj_database_url.parse("postgres://qwmrksyzdlafcq:ada670ddcadf8195faa35f5c9aedd63670367ef00a21f9922323737a87a7ad7f@ec2-54-154-101-45.eu-west-1.compute.amazonaws.com:5432/ddmdbob5jch9qd")
 }
 
 # Password validation
