@@ -93,14 +93,14 @@ _Some examples of the colours as used throughout the site_
 
 # Existing Features
 The site's structure consists of
-- **Homepage** which displays all products, as well as search and sort-by-category functionality. When logged in as admin, relevant control panel links are also displayed.
+- **Products page** which displays all products, as well as search and sort-by-category functionality. When logged in as admin, relevant control panel links are also displayed.
     This uses the *get_products* python function.
-- **Admin Login** page which allows the user to authenticate themselves using a username and password, as well as **Logout** buttons.
+- **Admin authentication** which allows the admin user to access product management and a shortcut to the Django Admin Panel.
     These utilize the *admin_login* and *logout* python functions.
 
-    ![Admin Login](/static/readme-assets/admin.png)
+    ![Admin Login](/static/readme-assets/admin-login.png)
 
-    - _The admin-login page can be accessed by clicking the link at the bottom of each page._
+    - _The admin-login page can be accessed by clicking the link at the top right of the navbar when logged in as admin._
 
     ![Admin features](/static/readme-assets/admin-features.png)
     - _Once logged in as an admin, links to the content-management features are displayed at the top of the product list._
