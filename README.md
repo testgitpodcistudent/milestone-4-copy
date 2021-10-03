@@ -117,7 +117,9 @@ The site's structure consists of
 **Developer Notes**
 - If you encounter the following error at any point running terminal commands in local deployment: ``` django.db.utils.OperationalError: FATAL:  role "qwmrksyzdlafcq" does not exist ``` , running ``` unset PGHOSTADDR ``` and re-trying the previous command will allow you to continue.
 
-- Ensure your IDE Python linter is set to flake8, or you will encounter false errors related to object models not existing.
+- Ensure your IDE Python linter is set to _flake8_, or you will encounter false errors related to object models not existing.
+
+- In _techzone/settings.py_ , 4 lines within _AUTH_PASSWORD_VALIDATORS_ are not PEP8 compliant. Fixing these caused errors, and a development decision was made to leave them as they are.
 
 <hr>
 
