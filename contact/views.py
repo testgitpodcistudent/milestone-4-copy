@@ -1,9 +1,8 @@
-from django.shortcuts import render
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import HttpResponse
-from django.contrib import messages
+
 
 def contact(request):
     if request.method == 'POST':
@@ -13,7 +12,7 @@ def contact(request):
             body = {
             'name': form.cleaned_data['name'],
             'email_address': form.cleaned_data['email_address'], 
-            'message':form.cleaned_data['message'], 
+            'message': form.cleaned_data['message'], 
             }
             message = "\n".join(body.values())
 

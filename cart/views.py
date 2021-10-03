@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (render, redirect, reverse,
+                              HttpResponse, get_object_or_404)
 from django.contrib import messages
-
 from products.models import Product
 
 
@@ -31,7 +31,7 @@ def add_to_cart(request, item_id):
 
 
 def adjust_cart(request, item_id):
-    """adjust quantity of specified product in cart to a specified amount from cart.html"""
+    """adjust quantity of product in cart to amount from cart.html"""
 
     product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get("quantity"))
@@ -63,5 +63,5 @@ def remove(request, item_id):
         request.session["cart"] = cart
         return HttpResponse(status=200)
 
-    except Exception as e:
+    except Exception:
         return HttpResponse(status=500)
