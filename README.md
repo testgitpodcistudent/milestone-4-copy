@@ -1,104 +1,225 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Logo](/static/readme-assets/logo-readme.png)
+# Data-Centric Project | product Website
 
-Welcome RoryBr1,
+# Table of Contents
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+1. [Overview](#overview)
+2. [UX](#ux)
+    * [Developer Goals](#developer-goals)
+    * [User Stories](#user-stories)
+    * [Design](#design)
+    * [Concept & Font Choice](#concept-and-font-choice)
+    * [Colours](#colours)
+3. [Features](#existing-features)
+    * [Existing Features](#existing-features)
+    * [Future Features](#future-features)
+4. [Technologies Used](#technologies-used)
+    * [Django](#django)
+    * [Coding Languages & Libraries](#coding-languages-and-libraries)
+    * [Software](#software)
+    * [Additional Tools](#additional-tools)
+5. [Deployment](#deployment)
+    * [GitPod Deployment](#gitpod-deployment)
+    * [Heroku](#heroku)
+6. [Testing](#testing)
+7. [Credits](#credits)
+    * [Acknowledgements](#acknowledgements)
 
-## Gitpod Reminders
+<hr>
+<hr>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Overview
 
-`python3 -m http.server`
+Placeholder text
 
-A blue button should appear to click: _Make Public_,
+The website is fully responsive, utilizing simple and colourful design language and an intuitive information structure.
 
-Another blue button should appear to click: _Open Browser_.
+[⇧ Back to Top](#table-of-contents)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+<hr>
+<hr>
 
-A blue button should appear to click: _Make Public_,
+# UX
 
-Another blue button should appear to click: _Open Browser_.
+## Developer Goals
+* Create an easy-to-use e-commerce website.
+* Allow the end-user (customer) to register an account, login, add products to their cart, and purchase them.
+* Create an intuitive interface for the site administrator to add, delete and edit products.
+* Allow the end user to search products by search term, sort by price and other factors, and view products based on category.
+* Provide links to social media pages run by the site owner.
+* Create an easy-to-use contact form for customers or potential customers to send messages to the site owner.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<hr> 
 
-To log into the Heroku toolbelt CLI:
+## User Stories
+1. As a _site administrator_, I want to upload products to the site for the _end-user_ to view and purchase. I want to be able to edit and delete these products if needed.
+2. As a _site administrator_, I want to sort the products into separate categories for ease of browsing.
+3. As a _site administrator_, I want to ensure that only I can alter the content of the website.
+4. As an _end-user_, I want to browse products relevant to me; including searching through them using search terms, sort by price, and view items in specific relevant categories.
+5. As an _end-user_, I want to send an e-mail to the site owner about an order (or potential order).
+   
+### How does the website function to meet the needs of the user, as described in the user stories?
+1. The _Add New product_, _Edit_ and _Delete_ functions enable the administrator to fulfill these Create, Update and Delete functions.
+2. The site requires administrator _authentication_ to reveal the administrator features. This is done on the _"Admin Login"_ page.
+3. The homepage displays all products on the site. The searchbar allows users to search products using a search term. The category links (_All Products, Laptops, Phones, Tablets_) allow users to view by category. The _Sort Products_ dropdown allows users to sort relevant products via different factors including cost.
+    A preview of the products is shown; when clicked, the user is directed to the full product page.
+4. The *Contact Us* link on the footer of each page directs the user to a functional Contact form which sends an e-mail to the site administrator's inbox.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+[⇧ Back to Top](#table-of-contents)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+<hr>
 
-------
+## Design
+![AmIResponsive Screenshot](/static/readme-assets/responsive-screens.png)
 
-## Release History
+* [Click here to view wireframes.](/static/readme-assets/wireframes.md) <br>
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Concept and Font Choice
+The site is designed to appear clean, professional, and uncluttered while also appearing vibrant and welcoming.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- [Hover.CSS](https://ianlunn.github.io/Hover/) - CSS library used for hover effects on site buttons.
+- [FontAwesome](https://fontawesome.com/) - Webfont library used for icons throughout the site.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Colours
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![Image scheme](/static/readme-assets/colours.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+_Some examples of the colours as used throughout the site_
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+[⇧ Back to Top](#table-of-contents)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+<hr>
+<hr>
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+# Existing Features
+The site's structure consists of
+- **Homepage** which displays all products, as well as search and sort-by-category functionality. When logged in as admin, relevant control panel links are also displayed.
+    This uses the *get_products* python function.
+- **Admin Login** page which allows the user to authenticate themselves using a username and password, as well as **Logout** buttons.
+    These utilize the *admin_login* and *logout* python functions.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+    ![Admin Login](/static/readme-assets/admin.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+    - _The admin-login page can be accessed by clicking the link at the bottom of each page._
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+    ![Admin features](/static/readme-assets/admin-features.png)
+    - _Once logged in as an admin, links to the content-management features are displayed at the top of the product list._
+- **product Page** for each product which is loaded when a product is clicked on the homepage..
+- **Add New product** - used to add a new product to the database.
+- **Delete product** allows the admin to delete the given product.
+- **Edit product** allows the admin to edit the selected product.
+    ![Edit and delete buttons](/static/readme-assets/edit-delete.png)
+    - _Edit and Delete buttons as displayed when logged in as admin_
+- **Messages** display a simple message to the user confirming actions such as cart updates, product deletions, login actions etc.
+    ![Messages](/static/readme-assets/flash-message.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+**Developer Notes**
+- If you encounter the following error at any point running terminal commands in local deployment: ``` django.db.utils.OperationalError: FATAL:  role "qwmrksyzdlafcq" does not exist ``` , running ``` unset PGHOSTADDR ``` and re-trying the previous command will allow you to continue.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- Ensure your IDE Python linter is set to flake8, or you will encounter false errors related to object models not existing.
 
-------
+<hr>
 
-## FAQ about the uptime script
+## Future Features
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+[⇧ Back to Top](#table-of-contents)
 
-**How will this affect me?**
+<hr>
+<hr>
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+# Technologies Used
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Django
+The website is built using [Django](https://www.djangoproject.com/).
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
+## Coding Languages and Libraries
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* [HTML5](https://www.w3.org/standards/webdesign/htmlcss.html) - Used on all pages for page structure and content.
+* [CSS](https://www.w3.org/standards/webdesign/htmlcss.html) - Used on all pages for content styling and placement.
+* [BootStrap 4.4.1](https://getbootstrap.com/) - Front end CSS framework.
+* [jQuery](https://jquery.com/) - JavaScript library used for intilization of BootStrap features.
+* [Python](https://www.python.org/) - used throughout site alongside Flask-PyMongo.
 
-**Can I opt out?**
+## Software
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+* [GitPod](https://www.gitpod.io/) - Code editor used throughout development to write code.
+* [GIMP Image Editor](https://www.gimp.org/) - Used throughout to crop and edit images.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Additional Tools
 
-**Anything more?**
+* [Balsamiq](https://balsamiq.com/) - Used to create wireframes in the design process.
+* [Responsively](https://responsively.app/) - Used to test site responsiveness throughout development.
+* [Am I Responsive](http://ami.responsivedesign.is/) - Browser-based preview any website's responsiveness. Screenshot featured in readme.md 
+* [Google Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) - Used throughout development to view the website, test features, test JavaScript, and test responsiveness. 
+* [ScreenToGif](https://www.screentogif.com/) - Used to create GIF screen-recordings for readme and testing purposes
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+[⇧ Back to Top](#table-of-contents)
 
----
+<hr>
+<hr>
 
-Happy coding!
+# Deployment 
+
+**Required:**
+
+- Python3
+- [GitHub](https://github.com/) account
+- [GitPod](https://gitpod.io/workspaces) account (for local deployment)
+- [GitPod browser extension](https://www.gitpod.io/docs/browser-extension/)
+- [Heroku](https://id.heroku.com/login) account
+
+[⇧ Back to Top](#table-of-contents)
+
+<hr>
+
+## GitPod Deployment
+
+1. Login to GitHub, and navigate to the [repository](https://github.com/RoryBr1/Milestone-3)
+2. Click on the GitPod button at the top right.
+3. Install all requirements; in the terminal of your GitPod workspace, type  
+   ``` pip3 install -r requirements.txt ```
+
+4. Run the app by typing ``` python3 manage.py runserver --insecure ``` into the terminal. *Note: if you do not add ``` --insecure ``` to the end of the command, images and other static files will fial to load.
+
+[⇧ Back to Top](#table-of-contents)
+
+<hr>
+
+## Heroku
+
+1. In the GitPod terminal, type ``` pip3 freeze -- local > requirements.txt `` . 
+2. In the terminal, type ``` python3 app.py > Procfile ``` . This will create a _Procfile_, which tells Heroku which file to run when the site is accessed.
+3. In the _Deploy_ tab on Heroku, click "Connect to GitHub" and select the relevant repository. Click "Connect".
+4. Go to the _Settings_ page in Heroku and click on "Config Vars". Click on "Reveal Config Vars".
+    - Enter the _IP, SECRET_KEY, MONGO_URI,_ and _MONGO_DBNAME_ as contained in your _env.py_ file.
+5. Go to the _Deploy_ tab in Heroku, scroll down and click "Enable Automatic Deploys". Click "Deploy Branch".
+
+Once the app is deployed, click "Open App" in Heroku on the project page. The project should be successfully deployed and will update automatically when new GitHub commits are made.
+
+[⇧ Back to Top](#table-of-contents)
+
+<hr>
+<hr>
+
+# Testing
+[Click here](/static/readme-assets/testing.md) to view the Testing.md file.
+
+<hr>
+
+
+# Credits
+
+
+[⇧ Back to Top](#table-of-contents)
+
+<hr>
+
+
+## Acknowledgements
+
+
+
+[⇧ Back to Top](#table-of-contents)
