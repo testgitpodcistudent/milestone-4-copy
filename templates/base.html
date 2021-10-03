@@ -152,16 +152,20 @@
     <div class="row bg-black w-100 ml-0 justify-content-center">
         <div class="nav justify-content-center">
             <div class="nav-item">
-                <a class="nav-link category-link hvr-underline-from-center" href="{% url 'products' %}">All Products </a>
+                <a class="nav-link category-link hvr-underline-from-center" href="{% url 'products' %}">All Products
+                </a>
             </div>
             <div class="nav-item">
-                <a class="nav-link category-link hvr-underline-from-center" href="{% url 'products' %}?category=Laptops">Laptops</a>
+                <a class="nav-link category-link hvr-underline-from-center"
+                    href="{% url 'products' %}?category=Laptops">Laptops</a>
             </div>
             <div class="nav-item">
-                <a class="nav-link category-link hvr-underline-from-center" href="{% url 'products' %}?category=Phones">Phones</a>
+                <a class="nav-link category-link hvr-underline-from-center"
+                    href="{% url 'products' %}?category=Phones">Phones</a>
             </div>
             <div class="nav-item">
-                <a class="nav-link category-link hvr-underline-from-center" href="{% url 'products' %}?category=Tablets">Tablets</a>
+                <a class="nav-link category-link hvr-underline-from-center"
+                    href="{% url 'products' %}?category=Tablets">Tablets</a>
             </div>
         </div>
     </div>
@@ -190,8 +194,8 @@
     {% endblock %}
 
     <div class="content">
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
     </div>
 
     <footer class="footer bg-dark text-center">
