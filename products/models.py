@@ -36,5 +36,5 @@ class Product(models.Model):
         try:
             url = self.image.url
         except self.image.url.DoesNotExist:
-            url = ""
+            url = "https://cupids.org/wp-content/themes/hearty/static/img/no-image/thumb-noimage.png"
         return url
