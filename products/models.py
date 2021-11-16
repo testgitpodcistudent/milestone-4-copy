@@ -30,11 +30,3 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-
-    @property
-    def imageURL(self):
-        try:
-            url = self.image.url
-        except self.image.url.DoesNotExist:
-            url = "https://cupids.org/wp-content/themes/hearty/static/img/no-image/thumb-noimage.png"
-        return url
