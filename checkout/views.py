@@ -162,8 +162,8 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     user = request.user
-    
-    if user.is_anonymous():
+
+    if user.is_anonymous = True:
         profile = None
     else:
         profile = UserProfile.objects.get(user=request.user)
