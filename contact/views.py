@@ -17,8 +17,10 @@ def contact(request):
             message = "\n".join(body.values())
 
             try:
-                send_mail(subject, message, 'codeinstitutestudent1@gmail.com', ['codeinstitutestudent1@gmail.com'])
-                return render(request, "contact/contact_confirmation.html", {'form': form})
+                send_mail(subject, message, 'codeinstitutestudent1@gmail.com',
+                          ['codeinstitutestudent1@gmail.com'])
+                return render(request, "contact/contact_confirmation.html",
+                              {'form': form})
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return render(request, "products/products.html", {'form': form})
