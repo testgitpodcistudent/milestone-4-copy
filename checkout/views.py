@@ -163,10 +163,8 @@ def checkout_success(request, order_number):
     save_info = request.session.get("save_info")
     order = get_object_or_404(Order, order_number=order_number)
 
-    if request.user.is_anonymous():
-        profile = None
-    else:
-        profile = UserProfile.objects.get(user=request.user)
+    profile = UserProfile.objects.get(user=request.user)
+    
     # Attach the user's profile to the order
     order.user_profile = profile
     order.save()
