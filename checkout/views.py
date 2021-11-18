@@ -42,7 +42,8 @@ def cache_checkout_data(request):
 
 def checkout(request):
     stripe_public_key = ("pk_test_51J7iQ5LjKorizDtcqxGSTH\
-    FFIboM0wMbblCNz5SnWLjl1SGXNom0CBxqN1FGbpHbx1vnHiGkmF98GwbNnTLTdDDE00h2ZtjXMv")
+    FFIboM0wMbblCNz5SnWLjl1SGXNom0CBxqN1FGbpHbx1vnHiGkmF98GwbNnTLTdD\
+    DE00h2ZtjXMv")
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == "POST":
@@ -94,7 +95,8 @@ def checkout(request):
                     return redirect(reverse("view_cart"))
 
             request.session["save_info"] = "save-info" in request.POST
-            return (redirect(reverse("checkout_success", args=[order.order_number])))
+            return (redirect(reverse("checkout_success",
+                             args=[order.order_number])))
         else:
             messages.error(
                 request,
@@ -161,9 +163,7 @@ def checkout_success(request, order_number):
     save_info = request.session.get("save_info")
     order = get_object_or_404(Order, order_number=order_number)
 
-    user = request.user
-
-    if user.is_anonymous = True:
+    if request.user.is_anonymous = True:
         profile = None
     else:
         profile = UserProfile.objects.get(user=request.user)
