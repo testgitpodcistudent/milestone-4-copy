@@ -1,5 +1,5 @@
 /* Variables */
-var updateBtns = document.getElementsByClassName('update-cart')
+var updateBtns = document.getElementsByClassName('update-cart');
 
 /* Toggle navbar-toggler icon between "bars" and "X" icons 
     according to whether the mobile navbar is open */
