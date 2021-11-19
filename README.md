@@ -175,26 +175,50 @@ The website's payment system is built using [Stripe](https://stripe.com/en-ie).
 
 # Deployment 
 
-**Required:**
+## GitPod (Local) Deployment
 
-- Python3
-- [GitHub](https://github.com/) account
-- [GitPod](https://gitpod.io/workspaces) account (for local deployment)
-- [GitPod browser extension](https://www.gitpod.io/docs/browser-extension/)
-- [Heroku](https://id.heroku.com/login) account
+The following steps will allow you to deploy the project 'locally' in the cloud-based IDE, Gitpod.
 
-[⇧ Back to Top](#table-of-contents)
-
+*This procedure requires a [GitHub](https://github.com/login) account, and a [Stripe](https://dashboard.stripe.com/register) account.*
 <hr>
 
-## GitPod Deployment
+**Step One: Creating a Gitpod workspace and installing requirements**
+1. [Login to Gitpod](https://gitpod.io/login) using your GitHub account. (If a GitHub pop-up window asks you to authorize Gitpod, click Authorize).
 
-1. Login to GitHub, and navigate to the [repository](https://github.com/RoryBr1/Milestone-4)
-2. Click on the GitPod button at the top right.
-3. Install all requirements; in the terminal of your GitPod workspace, type  
+2. Navigate to [this link](https://gitpod.io/#https://github.com/RoryBr1/Milestone-4) in your browser to open the repository in a new Gitpod workspace.
+
+3. Install all required packages in your Gitpod workspace, by typing 
    ``` pip3 install -r requirements.txt ```
+   in the workspace terminal and pressing enter.    
+   Wait until the installation processes for all packages have completed.
+<hr>
 
-4. Run the app by typing ``` python3 manage.py runserver --insecure ``` into the terminal. *Note: if you do not add ``` --insecure ``` to the end of the command, images and other static files will fial to load.
+**Step Two: Setting Django & Stripe Keys**
+
+*Reccomended reading:*  
+[What is a Django Secret Key?](https://docs.gitguardian.com/secrets-detection/detectors/specifics/django_secret_key#:~:text=Summary%3A%20The%20Django%20secret%20key,cookies%20sent%20by%20the%20application.)  
+[Stripe Docs: API Keys](https://stripe.com/docs/keys)
+
+
+1. Create a new file in the base directory of your project, named ".env" . This file will hold your SECRET_KEY. (We have included *.env* in our *.gitignore* file, which will prevent this sensitive data from being pushed publicly to GitHub).
+
+2. In your *.env* file, copy and paste these lines of code:
+
+    > SECRET_KEY=your-django-secret-key     
+    > STRIPE_PUBLIC_KEY=your-stripe-public-key      
+    > STRIPE_SECRET_KEY=your-stripe-secret-key
+
+2. Use [Djecrety.ir](https://djecrety.ir/) to generate a random Django key, and click on the key to copy it to your clipboard. 
+
+3. In your *.env* file, replace ```your-django-secret-key``` with your new key from the generator. (Do not include any quotation marks around the key).
+
+4. Login to [Stripe](https://dashboard.stripe.com/login) and navigate to your [Stripe Dashboard](https://dashboard.stripe.com/test/dashboard).
+
+5.  On the bottom right of the page, click on your "Publishable Key" to copy it to your clipboard.  
+    Paste it into your *.env* file, replacing ```your-stripe-public-key```.
+
+6. Again, on the bottom right of your [Stripe Dashboard](https://dashboard.stripe.com/test/dashboard), click on *Secret Key* once to reveal it. 
+    Click it again to copy it to your clipboard, and paste it into your *.env* file replacing ```your-stripe-secret-key```. 
 
 [⇧ Back to Top](#table-of-contents)
 
