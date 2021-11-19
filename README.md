@@ -204,10 +204,13 @@ The following steps will allow you to deploy the project 'locally' in the cloud-
 
 2. In your *.env* file, copy and paste these lines of code:
 
+    > DEVELOPMENT=True
     > SECRET_KEY=your-django-secret-key     
     > STRIPE_PUBLIC_KEY=your-stripe-public-key      
-    > STRIPE_SECRET_KEY=your-stripe-secret-key
-    > STRIPE_WH_SECRET=your-stripe-wh-secret
+    > STRIPE_SECRET_KEY=your-stripe-secret-key  
+    > STRIPE_WH_SECRET=your-stripe-wh-secret    
+    > EMAIL_HOST_PASS=your-email-host-pass   
+    > EMAIL_HOST_USER=your-email-host-user   
 
 2. Use [Djecrety.ir](https://djecrety.ir/) to generate a random Django key, and click on the key to copy it to your clipboard. 
 
@@ -217,9 +220,10 @@ The following steps will allow you to deploy the project 'locally' in the cloud-
 
 5.  On the bottom right of the page, click on your "Publishable Key" to copy it to your clipboard.  
     Paste it into your *.env* file, replacing ```your-stripe-public-key```. 
+
     In Gitpod, use the Explorer to navigate to ```checkout/views.py```. On line 44, replace the existing ```stripe_public_key``` with your own, inside the quotation marks.
 
-6. Again, on the bottom right of your [Stripe Dashboard](https://dashboard.stripe.com/test/dashboard), click on *Secret Key* once to reveal it.  
+6. On the bottom right of your [Stripe Dashboard](https://dashboard.stripe.com/test/dashboard), click on *Secret Key* once to reveal it.  
     Click it again to copy it to your clipboard, and paste it into your *.env* file replacing ```your-stripe-secret-key```. 
 <hr>
 
@@ -228,10 +232,10 @@ The following steps will allow you to deploy the project 'locally' in the cloud-
 1. In your Gitpod terminal, type the following command and press enter: ```python3 manage.py runserver``` . 
     The site is now being hosted locally, and the following prompt should appear:   
     ![Logo](/static/readme-assets/gitpod-runserver-prompt.png)  
-    Click "*Open Browser*", and the live preview of the site will open in a new browser tab.
+    Click "*Open Browser*", and the live site will open in a new browser tab.
 
-2. Click "*Shop Now*, then click "*View*" on any product. Click "*Add to Cart*". On the modal window that appears, click "*Check Out*". 
-    Scroll to the bottom of the *Shopping Cart* page, and click *Checkout*. 
+2. Click "*Shop Now*", then click "*View*" on any product. Click "*Add to Cart*". On the modal window that appears, click "*Check Out*". 
+    Scroll to the bottom of the *Shopping Cart* page, and click "*Checkout*". 
 
 3. Copy the URL of this *Checkout* page to your clipboard from your browser's URL bar. 
 
@@ -240,7 +244,12 @@ The following steps will allow you to deploy the project 'locally' in the cloud-
     On the "*Select events to listen to* option, click "*Account*" and "*Payment Intent*", and tick "*Select All*" for both.    
     Click "*Add Events*", and then "*Add Endpoint*".
 
-5. I
+5. At this point, the basic functionality of the site as a guest user is complete. The guest user can browse the locally deployed version of the site, add products to their cart, and complete the checkout process.
+    **Note**: As your Stripe account is set by default to run in *Test mode*, you can use the following *test mode* credit card details to complete the checkout process.   
+    > Card Number: 4242 4242 4242 4242  
+    > Expiry Date: 0424     
+    > CVC: 242  
+    > ZIP: 42424    
 
 
 
