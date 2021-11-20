@@ -209,7 +209,7 @@ The following steps will allow you to deploy the project 'locally' in the cloud-
     > STRIPE_PUBLIC_KEY=your-stripe-public-key      
     > STRIPE_SECRET_KEY=your-stripe-secret-key  
     > STRIPE_WH_SECRET=your-stripe-wh-secret    
-    > EMAIL_HOST_PASS=your-email-host-pass   
+    > EMAIL_HOST_PASSWORD=your-email-host-pass   
     > EMAIL_HOST_USER=your-email-host-user   
 
 2. Use [Djecrety.ir](https://djecrety.ir/) to generate a random Django key, and click on the key to copy it to your clipboard. 
