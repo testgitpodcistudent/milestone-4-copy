@@ -231,7 +231,7 @@ The following steps will allow you to deploy the project 'locally' in the cloud-
 
 1. In your Gitpod terminal, type the following command and press enter: ```python3 manage.py runserver``` . 
     The site is now being hosted locally, and the following prompt should appear:   
-    ![Logo](/static/readme-assets/gitpod-runserver-prompt.png)  
+    ![Gitpod preview prompt](/static/readme-assets/gitpod-runserver-prompt.png)  
     Click "*Open Browser*", and the live site will open in a new browser tab.
 
 2. Click "*Shop Now*", then click "*View*" on any product. Click "*Add to Cart*". On the modal window that appears, click "*Check Out*". 
@@ -239,18 +239,24 @@ The following steps will allow you to deploy the project 'locally' in the cloud-
 
 3. Copy the URL of this *Checkout* page to your clipboard from your browser's URL bar. 
 
-4. Navigate to your [Stripe Webhook Endpoints](https://dashboard.stripe.com/test/webhooks/create).  
+4. Navigate to [create Stripe Webhook Endpoints](https://dashboard.stripe.com/test/webhooks/create).  
     Paste the *Checkout* URL into the *Endpoint URL* field, and in the description text-area type something such as "Techzone Checkout".    
     On the "*Select events to listen to* option, click "*Account*" and "*Payment Intent*", and tick "*Select All*" for both.    
     Click "*Add Events*", and then "*Add Endpoint*".
 
-5. At this point, the basic functionality of the site as a guest user is complete. The guest user can browse the locally deployed version of the site, add products to their cart, and complete the checkout process.
+5. Once the endpoint is created, navigate to [Stripe Webhook Endpoints](https://dashboard.stripe.com/test/webhooks), and click on the address of the new endpoint you just created. 
+On the right hand corner of this page, click the webhook code to copy it to your clipboard. 
+Return to your *.env* file, and replace ```your-stripe-wh-secret``` with this new webhook code. 
+
+At this point, the basic functionality of the site as a guest user is complete. The guest user can browse the locally deployed version of the site, add products to their cart, and complete the checkout process.
     **Note**: As your Stripe account is set by default to run in *Test mode*, you can use the following *test mode* credit card details to complete the checkout process.   
     > Card Number: 4242 4242 4242 4242  
     > Expiry Date: 0424     
     > CVC: 242  
     > ZIP: 42424    
 
+**Note:** When ```DEVELOPMENT=True``` is in our *.env* file, e-mails (such as registration and order confirmation e-mails) will be printed to the Gitpod terminal.   
+If you choose to deploy the site to [Heroku](https://www.heroku.com/) following the procedure below, steps are listed which will instruct you on how to enable emails to be sent from a live Gmail account.
 
 
 [⇧ Back to Top](#table-of-contents)
