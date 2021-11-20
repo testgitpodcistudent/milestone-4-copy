@@ -163,9 +163,10 @@ def checkout_success(request, order_number):
 
     if request.user.is_anonymous:
         profile = None
+        # This is necessary to avoid TypeError on guest checkout.
     else:
         profile = UserProfile.objects.get(user=request.user)
-    
+
     # Attach the user's profile to the order
     order.user_profile = profile
     order.save()

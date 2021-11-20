@@ -1,4 +1,8 @@
 from pathlib import Path
+<<<<<<< HEAD
+=======
+import dj_database_url
+>>>>>>> 603d1bad8e436b6a126263b3231296f0e2989e3a
 import os
 import dotenv
 from dotenv import load_dotenv, find_dotenv
@@ -202,7 +206,11 @@ STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = "eur"
 STRIPE_PUBLIC_KEY = os.environ['STRIPE_PUBLIC_KEY']
 STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY']
+<<<<<<< HEAD
 STRIPE_WH_SECRET = os.environ['STRIPE_WH_SECRET']
+=======
+STRIPE_WH_SECRET = os.environ["STRIPE_WH_SECRET"]
+>>>>>>> 603d1bad8e436b6a126263b3231296f0e2989e3a
 
 
 # Email
