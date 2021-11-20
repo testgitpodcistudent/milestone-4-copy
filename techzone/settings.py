@@ -1,8 +1,9 @@
 from pathlib import Path
 import os
+import dotenv
+from dotenv import load_dotenv, find_dotenv
 
-import dj_database_url
-
+load_dotenv(find_dotenv())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -140,20 +141,16 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': ('django.contrib.auth.passwor\
-        d_validation.UserAttributeSimilarityValidator',)
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': ('django.contrib.auth.passwo\
-        rd_validation.MinimumLengthValidator',)
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': ('django.contrib.auth.password_vali\
-        dation.CommonPasswordValidator',)
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': ('django.contrib.auth.passwor\
-        d_validation.NumericPasswordValidator',)
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -203,9 +200,9 @@ if "USE_AWS" in os.environ:
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = "eur"
-STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
-STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
-STRIPE_WH_SECRET = os.environ.get("STRIPE_WH_SECRET")
+STRIPE_PUBLIC_KEY = os.environ['STRIPE_PUBLIC_KEY']
+STRIPE_SECRET_KEY = os.environ['STRIPE_SECRET_KEY']
+STRIPE_WH_SECRET = os.environ['STRIPE_WH_SECRET']
 
 
 # Email
@@ -217,9 +214,9 @@ else:
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587
     EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
-    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+    EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASS']
+    DEFAULT_FROM_EMAIL = os.environ['EMAIL_HOST_USER']
 
 
 # Default primary key field type
